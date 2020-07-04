@@ -48,7 +48,7 @@ defmodule ReadabilityHttpTest do
       with_mock HTTPoison, get!: fn _url, _headers, _opts -> response end do
         %Readability.Summary{article_html: result_html} = Readability.summarize(url)
 
-        assert result_html =~ ~r/connected computing devices\".<\/p><\/div><\/div>$/
+        assert result_html =~ ~r/connected computing devices&quot;.<\/p><\/div><\/div>$/
       end
     end)
   end
@@ -66,7 +66,7 @@ defmodule ReadabilityHttpTest do
     with_mock HTTPoison, get!: fn _url, _headers, _opts -> response end do
       %Readability.Summary{article_html: result_html} = Readability.summarize(url)
 
-      assert result_html =~ ~r/connected computing devices\".<\/p><\/div><\/div>$/
+      assert result_html =~ ~r/connected computing devices&quot;.<\/p><\/div><\/div>$/
     end
   end
 
@@ -84,7 +84,7 @@ defmodule ReadabilityHttpTest do
     with_mock HTTPoison, get!: fn _url, _headers, _opts -> response end do
       %Readability.Summary{article_html: result_html} = Readability.summarize(url)
 
-      assert result_html =~ ~r/connected computing devices\".<\/p><\/div><\/div>$/
+      assert result_html =~ ~r/connected computing devices&quot;.<\/p><\/div><\/div>$/
     end
   end
 end

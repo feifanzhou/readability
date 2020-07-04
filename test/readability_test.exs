@@ -25,7 +25,7 @@ defmodule ReadabilityTest do
     bbc_html = Readability.readable_html(bbc)
 
     assert bbc_html =~ ~r/^<div><div><figure><span><img alt=\"A Microsoft logo/
-    assert bbc_html =~ ~r/connected computing devices\".<\/p><\/div><\/div>$/
+    assert bbc_html =~ ~r/connected computing devices&quot;.<\/p><\/div><\/div>$/
 
     bbc_text = Readability.readable_text(bbc)
     # TODO: Remove image caption when extract only text
